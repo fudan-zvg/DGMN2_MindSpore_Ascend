@@ -1,0 +1,22 @@
+enable_modelarts: 0
+
+device_target: 'Ascend'
+device_id: 0
+
+# Url for modelarts
+data_url: ""
+train_url: ""
+checkpoint_url: ""
+output_path: ""
+
+file_name: 'dgmn2_tiny.mindir'
+file_format: 'MINDIR'
+
+backbone: 'dgmn2_tiny'
+train_image_size: 224
+class_num: 1000
+batch_size: 1
+dgmn2_config_path: 'src.dgmn2.DGMN2Config'
+
+# load model
+pretrained: './dgmn2_tiny.ckpt'

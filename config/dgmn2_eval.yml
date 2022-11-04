@@ -1,0 +1,30 @@
+enable_modelarts: 0
+
+# Url for modelarts
+data_url: "s3://bucket-d/datasets/imagenet"
+train_url: "s3://bucket-d/train"
+checkpoint_url: 
+output_path: "/cache/train"
+data_path: "/cache/datasets/imagenet"
+
+# eval datasets
+interpolation: 'BILINEAR'
+eval_path: '/path_to_code/datasets/imagenet/val'
+eval_image_size: 224
+eval_batch_size: 64
+eval_interval: 1
+eval_offset: -1
+eval_num_workers: 12
+
+# load model
+pretrained: './dgmn2_tiny.ckpt'
+
+# network
+backbone: 'dgmn2_tiny'
+class_num: 1001
+dgmn2_config_path: 'src.dgmn2.DGMN2Config'
+
+open_profiler: 0
+
+amp_level: "O3"
+device_target: 'GPU'
